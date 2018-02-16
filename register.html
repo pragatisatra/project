@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="validate.js"></script>
+</head>
+<style>
+form {
+    border: 10px solid #f1f1f1;
+	border-bottom :0px;
+     background:white;
+
+
+}
+body {
+	margin: 0;
+	padding: 0;
+	background:url('img/footer_lodyas.png');
+
+	}
+.store{
+	 font-family: 'Roboto', sans-serif;
+	 padding:150px 400px;
+	
+	
+	 }
+input[type=text], input[type=password] ,input[type=email] ,input[type=number],.fieldset-auto-width,.selectc{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type=submit]{
+  display:block;
+  background-color: #436eee;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    border-radius:5px;
+    font-weight:bold;
+}
+input[type=submit]:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+div.psw {
+    float: right;
+    padding: 1px;
+	display:inline-block;
+
+}
+h1.heading {
+padding:4px 4px;
+
+text-align:center;
+}
+
+.topbar-items:hover {
+  color: #436eee;
+  border-color: #436eee;
+}
+.topbar-items {
+ color: #28ACFF;
+
+ float:right;
+ margin-top: -11px;
+ margin-left:10px;
+ border:2px solid #28ACFF;
+ font-size: 15px;
+ padding: 4px 4px;
+ border-radius : 10px;
+}
+
+.container {
+    padding: 26px;
+	background-color:#f1f1f1;
+
+}
+
+</style>
+<body>
+
+
+<div class="store">
+<form action="insert_patient.php" name="myForm" onsubmit="return validate()" method="post">
+<div style="padding:10px;">
+<h1 class=heading>Register</h1>
+<label><b>Name</b></label> 
+    			<input name="pname" placeholder="Name" tabindex="1" type="text"> 
+    			 
+    			<label><b>Email</b></label>
+    			<input name="email" placeholder="example@domain.com" type="email">
+                
+                <label><b>Create a username</b></label>
+    			<input name="upname" placeholder="Username" tabindex="2" type="text">
+				
+				<label><b>Create a password</b></label>
+    			<input type="Password" name="password"> 
+				
+                <label><b>Confirm your password</b></label> 
+    			<input type="Password" name="repassword" > 
+				
+                <label><b>Age</b></label>
+    			<input name="age" placeholder="in years" type="number">
+              
+            <label><b>Gender  </b></label>
+			<select class="selectc" name="gender">
+            <option>I am..</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+            </select><br><br>
+            
+           <label><b>Mobile phone</b></label>
+            <input name="phone" placeholder="phone number" type="number"> <br><br>
+            <div style="text-align:right;"><input type="submit" value="Sign me up!" ></div>
+</div>
+</form>
+ <div class="container" >
+    <div class="psw">Already a member ? <button class="topbar-items" onclick="window.location.href='patient_login.html'">Login</button></div>
+  </div>
+</div>
+
+<script>
+  
+      function validate()
+      {
+      
+         if( document.myForm.Name.value == "" )
+         {
+            alert( "Please provide your valid name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+		 var letters = /^[A-Za-z]+$/;  
+		 
+		 if(!document.myForm.Name.value.match(letters))
+		 {
+		   alert("Name must have alphabet characters only");  
+		   document.myForm.Name.focus() ;
+            return false;
+         } 
+		  if( document.myForm.Email.value == "" )
+         {
+            alert( "Please enter a valid Email" );
+            document.myForm.Email.focus() ;
+            return false;
+         }
+		 var x=document.myForm.Email.value;  
+		 var atposition=x.indexOf("@");  
+		 var dotposition=x.lastIndexOf(".");  
+		 if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+		 {  
+		 alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+		  document.myForm.Email.focus() ;
+		 return false;  
+		 }  
+         if( document.myForm.Username.value == "" )
+         {
+            alert( "Please provide your valid  username!" );
+            document.myForm.Username.focus() ;
+            return false;
+         }
+		 
+         if(document.myForm.paswd.value=="")
+		 {  
+		    alert("Password can't be blank");  
+			document.myForm.paswd.focus() ;
+			return false;  
+		}
+         
+		 if(document.myForm.paswd.value.length <6 || document.myForm.paswd.value.length>20)
+		 {  
+		    alert("Password length must be between 6 to 20 characters");  
+			document.myForm.paswd.focus() ;
+			return false;  
+		 }  
+		 if(document.myForm.paswd.value!=document.myForm.repaswd.value)
+		 {
+		    alert( "Passwords don't match ! Retype password..." );
+            document.myForm.repaswd.focus() ;
+            return false;
+		 }
+         
+		  if( document.myForm.Age.value == "" || isNaN( document.myForm.Age.value ) || document.myForm.Age.value > 100 )
+         {
+            alert( "Please provide a valid Age" );
+            document.myForm.Age.focus() ;
+            return false;
+         }
+		 
+         if( document.myForm.Gender.selectedIndex <1 )
+         {
+            alert( "Please provide your gender !" );
+            return false;
+         }
+		 
+		 
+         if( document.myForm.Phone.value == "" || isNaN( document.myForm.Phone.value ) || document.myForm.Phone.value.length != 10 )
+         {
+            alert( "Please provide a valid 10-digits Phone no." );
+            document.myForm.Phone.focus() ;
+            return false;
+         }
+		 
+		
+         return( true );
+      }
+   
+</script>
+</body>
+</html>
+
+</html>
