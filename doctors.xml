@@ -1,0 +1,93 @@
+<docinfo> 
+
+<doctor> 
+<Did>1</Did> 
+<face>xml/3.png</face> 
+
+<name>Mikhail Varshavski</name> 
+<age>28</age> 
+<occupation>Head of Diagnostic Medicine</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+<doctor> 
+<Did>2 </Did> 
+<face>xml/1.jpg</face> 
+<name>Bill Adams</name> 
+<age>30 </age> 
+<occupation>Head of Oncology</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+<doctor> 
+<Did>3</Did> 
+<face>xml/2.jpg</face> 
+<name>Mary Chase</name> 
+<age>22</age> 
+<occupation>Dean of Medicine and Adminstrator</occupation>  
+<qualification>M.D</qualification>
+</doctor> 
+
+<doctor> 
+<Did>4</Did> 
+<face>xml/5.jpg</face> 
+
+<name>Derek Shepherd</name> 
+<age>29</age> 
+<occupation>Neurologist</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+<doctor> 
+<Did>5</Did> 
+<face>xml/4.jpg</face> 
+
+<name>Perry Jackson</name> 
+<age>34</age> 
+<occupation>Surgeon</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+
+
+
+<doctor> 
+<Did>6</Did> 
+<face>xml/6.jpg</face> 
+
+<name>Ally Cameron</name> 
+<age>33</age> 
+<occupation>Physician</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+<doctor> 
+<Did>7</Did> 
+<face>xml/7.jpg</face> 
+<name>Sophie Watts</name> 
+<age>59</age> 
+<occupation>Plastic Surgeon</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+<doctor> 
+<Did>8</Did> 
+<face>xml/8.jpg</face> 
+<name>Jim Harrison</name> 
+<age>42</age> 
+<occupation>Cardiologist</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+
+<doctor> 
+<Did>9</Did> 
+<face>xml/9.jpg</face> 
+<name>Liam Dickson</name> 
+<age>25</age> 
+<occupation>Psychiatrist</occupation>
+<qualification>M.D</qualification>  
+</doctor> 
+
+
+</docinfo> 
