@@ -1,0 +1,146 @@
+<?php
+session_start();
+include_once("config.php");
+	
+$message="";
+if(!empty($_POST["login"])) {
+	$result = mysqli_query($conn,"SELECT * FROM Patient WHERE upname='" . $_POST["upname"] . "' and password = '". $_POST["password"]."'");
+	$row  = mysqli_fetch_array($result);
+	if(is_array($row)) {
+	$_SESSION["pid"] = $row['pid'];
+	$_SESSION["upname"] = $row['upname'];
+	header('location:patient.php');
+	} else {
+	$message = "Invalid Username or Password!";
+	}
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<style>
+form {
+    border: 11px solid #f1f1f1;
+     background:white;
+
+}
+body {
+	margin: 0;
+	padding: 0;
+	background:url('img/footer_lodyas.png');
+
+	}
+.store{
+	 font-family: 'Roboto', sans-serif;
+	 padding:150px 450px;
+	
+	
+	 }
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type=submit]{
+  display:block;
+  background-color: #436eee;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    border-radius:5px;
+    font-weight:bold;
+}
+input[type=submit]:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+.container {
+    padding: 16px;
+}
+
+div.psw {
+    float: right;
+    padding: 1px;
+	display:inline-block;
+
+}
+.heading {
+padding:4px 4px;
+
+text-align:center
+
+}
+.topbar-items:hover {
+  color: #436eee;
+  border-color: #436eee;
+}
+.topbar-items {
+ color: #28ACFF;
+
+ float:right;
+ margin-top: -11px;
+ margin-left:10px;
+ border:2px solid #28ACFF;
+ font-size: 15px;
+ padding: 4px 4px;
+ border-radius : 10px;
+}
+
+
+.error-message {
+	text-align:center;
+	color:#FF0000;
+}
+.member-dashboard {
+	padding: 40px;
+	background: #f2f2f2;
+	color: #555;
+	border-radius: 4px;
+	display: inline-block;
+	text-align:center; 
+}
+</style>
+<body>
+
+
+<div class="store">
+
+<?php if(empty($_SESSION["pid"])) { ?>
+<form action="" method="post" >
+<div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>
+
+<div style="padding:10px;">
+<div class=heading><h1>Login</h1></div>
+  
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="upname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+     <input type="checkbox" checked="checked" > Remember me
+    <div style="text-align:right;"><input type="submit" value="Login" name="login"></div>
+	  <br>Forgot <a href="reset.html"><span style="color:blue;">password?</a></span>
+  </div>
+ </div>
+ 
+  <div class="container" style="background-color:#f1f1f1">
+
+    <div class="psw">Not a member yet ? <button class="topbar-items" onclick="window.location.href='register.html'">Join Us</button></div>
+  </div>
+
+</form>
+</div>
+
+</body>
+</html>
