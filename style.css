@@ -1,0 +1,140 @@
+body {margin:0;
+overflow-x:hidden;}
+html,body,h1,h2,h3,h4,h5 {font-family: "Roboto", sans-serif}
+#web-name {
+  float:left;
+  font-weight:bold;
+  padding: 26px 30px;
+  font-size: 25px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #EBEBEB;
+  font-family: 'Roboto', sans-serif;
+}
+
+.topnav a {
+  display: inline-block;  
+  padding: 12px 16px;
+  text-decoration: none;
+  
+}
+.topbar-items a {
+ color: black;
+ float:right;
+ margin: 15px;
+ border:2px solid black;
+ font-size: 15px;
+ padding: 12px 16px;
+ border-radius : 10px;
+}
+
+.topbar-items a:hover {
+  color: #28ACFF;
+  border-color: #28ACFF;
+}
+.navbar {
+ background-color:black;
+}
+.navbar a {
+
+	color: white;
+	font-weight: 100;
+	font-size: 17px;
+    margin:2px;
+}
+.navbar a:hover {
+	background: #436eee !important;
+}
+
+.jumbo { 
+position:static;
+background:url('medical.png')center center no-repeat;
+	background-size: cover;
+	height: 700px;
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+    
+
+}
+.content {   
+   width:100%;
+	font-family: 'Roboto', sans-serif;
+	color: #436eee;
+    background:#EBEBEB;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 0px;
+	line-height: 1.2;
+    padding:40px;
+
+}
+input[type=text] ,textarea {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+     margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size: 16px;
+    background-color: white;
+    
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.btn{
+  display:block;
+  background-color: #436eee;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    border-radius:5px;
+    font-weight:bold;
+}
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#about {
+text-align:center;
+ color:white;
+ background:#436eee;
+ font-size: 32px;
+}
+.content p {font-size:19px;font-weight:100;}
+
+#contact{
+ height: 600px;
+ color:black;
+width: 100%;
+
+}
+.bottom {
+ text-align:center;
+ color:white;
+ background:rgba(25,25,25,0.95);
+ font-size: 32px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
